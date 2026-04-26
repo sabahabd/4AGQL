@@ -1,0 +1,98 @@
+<!doctype html>
+<html lang="fr">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>PGE - Classes</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;700&family=IBM+Plex+Mono:wght@400;600&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="./css/main.css" />
+  </head>
+  <body>
+    <div class="bg-orb orb-a"></div>
+    <div class="bg-orb orb-b"></div>
+    <main class="app-shell">
+      <header class="app-header">
+        <div>
+          <p class="eyebrow">Frontend multipage</p>
+          <h1>Gestion des classes</h1>
+        </div>
+        <div class="header-actions">
+          <div class="auth-pill" id="sessionStatus">Non connecte</div>
+          <button id="logoutBtn" type="button">Se deconnecter</button>
+        </div>
+      </header>
+
+      <nav class="page-nav">
+        <a class="page-link" href="./users.html">Users</a>
+        <a class="page-link" href="./grades.html">Grades</a>
+        <a class="page-link is-active" href="./classes.html">Classes</a>
+        <a class="page-link" href="./analytics.html">Analytics</a>
+      </nav>
+
+      <article class="panel">
+        <div class="section-head">
+          <h2>Classes</h2>
+        </div>
+
+        <form id="listClassesForm" class="inline-form">
+          <label>
+            Sort order
+            <select name="sortOrder">
+              <option value="ASC">ASC</option>
+              <option value="DESC">DESC</option>
+            </select>
+          </label>
+          <button type="submit">List classes</button>
+        </form>
+
+        <div class="grid-two">
+          <form id="getClassForm" class="stack-form">
+            <h3>Get Class</h3>
+            <label>Class ID <input type="number" name="id" required /></label>
+            <button type="submit">Fetch</button>
+          </form>
+
+          <form id="addStudentToClassForm" class="stack-form">
+            <h3>Add Student To Class</h3>
+            <label>Class ID <input type="number" name="classId" required /></label>
+            <label>Student ID <input type="number" name="studentId" required /></label>
+            <button type="submit">Add Student</button>
+          </form>
+        </div>
+
+        <div class="grid-three">
+          <form id="createClassForm" class="stack-form">
+            <h3>Create Class</h3>
+            <label>Name <input type="text" name="name" required /></label>
+            <label>Professor ID (optional) <input type="number" name="professorId" /></label>
+            <button type="submit">Create</button>
+          </form>
+
+          <form id="updateClassForm" class="stack-form">
+            <h3>Update Class</h3>
+            <label>Class ID <input type="number" name="id" required /></label>
+            <label>Name <input type="text" name="name" /></label>
+            <label>Professor ID <input type="number" name="professorId" /></label>
+            <button type="submit">Update</button>
+          </form>
+
+          <form id="deleteClassForm" class="stack-form">
+            <h3>Delete Class</h3>
+            <label>Class ID <input type="number" name="id" required /></label>
+            <button type="submit" class="danger">Delete</button>
+          </form>
+        </div>
+
+        <pre id="classesOutput" class="output"></pre>
+      </article>
+    </main>
+
+    <div id="toast" class="toast" role="status" aria-live="polite"></div>
+    <script type="module" src="./js/pages/classesPage.js"></script>
+  </body>
+</html>

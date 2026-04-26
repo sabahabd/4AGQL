@@ -1,0 +1,49 @@
+<!doctype html>
+<html lang="fr">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>PGE - Users</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;700&family=IBM+Plex+Mono:wght@400;600&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="./css/main.css" />
+  </head>
+  <body>
+    <div class="bg-orb orb-a"></div>
+    <div class="bg-orb orb-b"></div>
+    <main class="app-shell">
+      <header class="app-header">
+        <div>
+          <p class="eyebrow">Frontend multipage</p>
+          <h1>Gestion des utilisateurs</h1>
+        </div>
+        <div class="header-actions">
+          <div class="auth-pill" id="sessionStatus">Non connecte</div>
+          <button id="logoutBtn" type="button">Se deconnecter</button>
+        </div>
+      </header>
+
+      <nav class="page-nav">
+        <a class="page-link is-active" href="./users.html">Users</a>
+        <a class="page-link" href="./grades.html">Grades</a>
+        <a class="page-link" href="./classes.html">Classes</a>
+        <a class="page-link" href="./analytics.html">Analytics</a>
+      </nav>
+
+      <article class="panel">
+        <div class="section-head">
+          <h2>Users</h2>
+          <button id="refreshUsersBtn" type="button">Refresh</button>
+        </div>
+        <pre id="usersOutput" class="output"></pre>
+      </article>
+    </main>
+
+    <div id="toast" class="toast" role="status" aria-live="polite"></div>
+    <script type="module" src="./js/pages/usersPage.js"></script>
+  </body>
+</html>

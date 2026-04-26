@@ -1,0 +1,90 @@
+<!doctype html>
+<html lang="fr">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>PGE - School GraphQL Console</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;700&family=IBM+Plex+Mono:wght@400;600&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="./css/main.css" />
+  </head>
+  <body>
+    <div class="bg-orb orb-a"></div>
+    <div class="bg-orb orb-b"></div>
+    <main class="app-shell">
+      <header class="app-header">
+        <div>
+          <p class="eyebrow">Frontend multipage</p>
+          <h1>Authentification</h1>
+        </div>
+        <div class="header-actions">
+          <div class="auth-pill" id="sessionStatus">Non connecte</div>
+          <button id="openDashboardBtn" type="button" hidden>Ouvrir le dashboard</button>
+          <button id="logoutFromAuthBtn" type="button" hidden>Se deconnecter</button>
+        </div>
+      </header>
+
+      <section class="grid-two auth-grid">
+        <article class="panel">
+          <h2>Connexion</h2>
+          <form id="loginForm" class="stack-form">
+            <label>
+              Email
+              <input type="email" name="email" required />
+            </label>
+            <label>
+              Mot de passe
+              <input type="password" name="password" required />
+            </label>
+            <button type="submit">Se connecter</button>
+          </form>
+        </article>
+
+        <article class="panel">
+          <h2>Creer un utilisateur</h2>
+          <form id="registerForm" class="stack-form">
+            <label>
+              Email
+              <input type="email" name="email" required />
+            </label>
+            <label>
+              Pseudo
+              <input type="text" name="pseudo" required />
+            </label>
+            <label>
+              Mot de passe
+              <input type="password" name="password" minlength="6" required />
+            </label>
+            <label>
+              Role
+              <select name="role" required>
+                <option value="Student">Student</option>
+                <option value="Professor">Professor</option>
+              </select>
+            </label>
+            <button type="submit">Creer le compte</button>
+          </form>
+        </article>
+      </section>
+
+      <article class="panel">
+        <h2>Navigation</h2>
+        <p class="eyebrow">Apres connexion, vous pouvez ouvrir les pages dediees.</p>
+        <nav class="page-nav">
+          <a class="page-link" href="./users.html">Users</a>
+          <a class="page-link" href="./grades.html">Grades</a>
+          <a class="page-link" href="./classes.html">Classes</a>
+          <a class="page-link" href="./analytics.html">Analytics</a>
+        </nav>
+      </article>
+    </main>
+
+    <div id="toast" class="toast" role="status" aria-live="polite"></div>
+
+    <script type="module" src="./js/pages/authPage.js"></script>
+  </body>
+</html>

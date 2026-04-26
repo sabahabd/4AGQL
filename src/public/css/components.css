@@ -1,0 +1,153 @@
+.panel {
+  background: color-mix(in srgb, var(--paper) 92%, white 8%);
+  border: 1px solid var(--edge);
+  box-shadow: var(--shadow);
+  border-radius: 20px;
+  padding: 16px;
+  backdrop-filter: blur(2px);
+}
+
+.auth-pill {
+  background: #f5ead8;
+  border: 1px solid #d6b996;
+  padding: 6px 12px;
+  border-radius: 999px;
+  font-size: 0.86rem;
+}
+
+.stack-form {
+  display: grid;
+  gap: 8px;
+}
+
+.inline-form {
+  display: flex;
+  gap: 10px;
+  align-items: end;
+  flex-wrap: wrap;
+}
+
+label {
+  display: grid;
+  gap: 4px;
+  font-size: 0.88rem;
+  color: var(--ink-soft);
+}
+
+input,
+select,
+button {
+  border-radius: 10px;
+}
+
+input,
+select {
+  border: 1px solid var(--edge);
+  background: white;
+  padding: 9px 10px;
+}
+
+button {
+  border: 0;
+  background: var(--accent);
+  color: white;
+  padding: 9px 12px;
+  cursor: pointer;
+  transition: transform 120ms ease, background-color 120ms ease;
+}
+
+button:hover {
+  background: var(--accent-strong);
+  transform: translateY(-1px);
+}
+
+button.danger {
+  background: var(--danger);
+}
+
+.chip {
+  border: 1px solid var(--edge);
+  background: #fff;
+  color: var(--ink);
+  padding: 8px 12px;
+}
+
+.chip.is-active {
+  background: #ffe8d7;
+  border-color: #e3b48a;
+}
+
+.page-link {
+  display: inline-flex;
+  align-items: center;
+  border: 1px solid var(--edge);
+  background: #fff;
+  color: var(--ink);
+  padding: 8px 12px;
+  border-radius: 10px;
+  text-decoration: none;
+  font-size: 0.92rem;
+}
+
+.page-link.is-active {
+  background: #ffe8d7;
+  border-color: #e3b48a;
+}
+
+.output {
+  min-height: 160px;
+  max-height: 340px;
+  overflow: auto;
+  white-space: pre-wrap;
+  background: #12151a;
+  color: #ecf2ff;
+  border-radius: 12px;
+  padding: 12px;
+  font-size: 0.82rem;
+}
+
+.toast {
+  position: fixed;
+  right: 16px;
+  bottom: 16px;
+  background: #1f2933;
+  color: #fff;
+  border-radius: 10px;
+  padding: 10px 14px;
+  border: 1px solid #334255;
+  opacity: 0;
+  transform: translateY(10px);
+  pointer-events: none;
+  transition: opacity 160ms ease, transform 160ms ease;
+  z-index: 20;
+}
+
+.toast.visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.bg-orb {
+  position: fixed;
+  border-radius: 999px;
+  filter: blur(10px);
+  z-index: 1;
+  opacity: 0.6;
+  pointer-events: none;
+}
+
+.orb-a {
+  width: 160px;
+  height: 160px;
+  top: 60px;
+  left: 35px;
+  background: #ffb892;
+}
+
+.orb-b {
+  width: 180px;
+  height: 180px;
+  bottom: 40px;
+  right: 40px;
+  background: #b0cdf5;
+}

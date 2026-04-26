@@ -1,0 +1,63 @@
+<!doctype html>
+<html lang="fr">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>PGE - Analytics</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;700&family=IBM+Plex+Mono:wght@400;600&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="./css/main.css" />
+  </head>
+  <body>
+    <div class="bg-orb orb-a"></div>
+    <div class="bg-orb orb-b"></div>
+    <main class="app-shell">
+      <header class="app-header">
+        <div>
+          <p class="eyebrow">Frontend multipage</p>
+          <h1>Analytics des notes</h1>
+        </div>
+        <div class="header-actions">
+          <div class="auth-pill" id="sessionStatus">Non connecte</div>
+          <button id="logoutBtn" type="button">Se deconnecter</button>
+        </div>
+      </header>
+
+      <nav class="page-nav">
+        <a class="page-link" href="./users.html">Users</a>
+        <a class="page-link" href="./grades.html">Grades</a>
+        <a class="page-link" href="./classes.html">Classes</a>
+        <a class="page-link is-active" href="./analytics.html">Analytics</a>
+      </nav>
+
+      <article class="panel">
+        <div class="section-head">
+          <h2>Grade Analytics (Professor)</h2>
+        </div>
+        <form id="analyticsForm" class="grid-three">
+          <label>
+            Student ID
+            <input type="number" name="studentId" />
+          </label>
+          <label>
+            Course
+            <input type="text" name="course" />
+          </label>
+          <label>
+            Class ID
+            <input type="number" name="classId" />
+          </label>
+          <button type="submit">Compute analytics</button>
+        </form>
+        <pre id="analyticsOutput" class="output"></pre>
+      </article>
+    </main>
+
+    <div id="toast" class="toast" role="status" aria-live="polite"></div>
+    <script type="module" src="./js/pages/analyticsPage.js"></script>
+  </body>
+</html>
