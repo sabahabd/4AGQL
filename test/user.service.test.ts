@@ -1,7 +1,6 @@
 import { describe, it, expect, beforeEach, vi } from "vitest";
 import { UserService } from "../src/services/userService";
 
-// Mock bcrypt to deterministic behavior
 vi.mock("bcryptjs", () => ({
   default: {
     hash: async (s: string) => `hashed-${s}`,
@@ -9,7 +8,6 @@ vi.mock("bcryptjs", () => ({
   },
 }));
 
-// Mock token generator
 vi.mock("../src/auth/jwt", () => ({
   generateAccessToken: () => "fixed-token",
 }));
